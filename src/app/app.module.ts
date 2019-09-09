@@ -6,18 +6,20 @@ import { HeroesComponent } from './heroes/heroes.component';
 import {FormsModule} from '@angular/forms';
 import { HeroesDetailComponent } from './heroes-detail/heroes-detail.component';
 import { HeroesAddComponent } from './heroes-add/heroes-add.component';
+import {MatCardModule} from '@angular/material';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
     HeroesDetailComponent,
-    HeroesAddComponent
+    HeroesAddComponent,
   ],
   // to co chcemy uzywac
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    MatCardModule
   ],
   // to co chcemy reuzywac
   providers: [],

@@ -18,5 +18,4 @@ export class HeroesDetailComponent implements OnInit {
   ngOnInit() {
     this.output.emit(true);
   }
-
 }
