@@ -8,6 +8,6 @@
   </li>
 </ul>
 
-<app-heroes-detail>
+<app-heroes-detail [hero]="selectedHero" (output)="print($event)">
 
 </app-heroes-detail>
