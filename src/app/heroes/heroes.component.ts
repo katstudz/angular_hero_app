@@ -24,6 +24,12 @@ export class HeroesComponent implements OnInit {
     console.log(hero.name);
   }
 
+  addHero(newHero: Hero) {
+    console.log(newHero.name);
+    console.log(newHero.id);
+    this.heroes.push(newHero);
+  }
+
   print(event: any) {
     console.log(event);
   }

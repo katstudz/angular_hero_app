@@ -11,3 +11,7 @@
 <app-heroes-detail [hero]="selectedHero" (output)="print($event)">
 
 </app-heroes-detail>
+
+<app-heroes-add (newHero) = "addHero($event)">
+
+</app-heroes-add>

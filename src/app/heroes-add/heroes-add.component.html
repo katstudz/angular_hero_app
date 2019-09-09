@@ -1,0 +1,9 @@
+<h2>Add hero</h2>
+<div><span>id: </span>{{initHero.id}}</div>
+<div>
+  <label>name:
+    <input [(ngModel)]="initHero.name"
+           placeholder="name"/>
+  </label>
+</div>
+<h3 (click)="emitHero()">Add</h3>
