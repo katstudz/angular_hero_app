@@ -7,6 +7,7 @@ import {FormsModule} from '@angular/forms';
 import { HeroesDetailComponent } from './heroes-detail/heroes-detail.component';
 import { HeroesAddComponent } from './heroes-add/heroes-add.component';
 import {MatCardModule} from '@angular/material';
+import { MessageComponent } from './message/message.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import {MatCardModule} from '@angular/material';
     HeroesComponent,
     HeroesDetailComponent,
     HeroesAddComponent,
+    MessageComponent,
   ],
   // to co chcemy uzywac
   imports: [
