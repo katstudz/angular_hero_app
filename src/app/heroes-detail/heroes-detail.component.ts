@@ -1,5 +1,8 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {Hero} from '../hero';
+import {ActivatedRoute} from '@angular/router';
+import {HeroService} from '../hero-service/hero.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-heroes-detail',
@@ -9,13 +12,25 @@ import {Hero} from '../hero';
 export class HeroesDetailComponent implements OnInit {
 
   @Input() hero: Hero;
-  @Output() output: EventEmitter<boolean>;
+  // @Output() output: EventEmitter<boolean>;
 
-  constructor() {
-    this.output = new EventEmitter();
+  constructor(
+    private route: ActivatedRoute,
+    private heroService: HeroService,
+    private location: Location
+  ) {}
+  ngOnInit() {
+    this.getHero();
   }
 
-  ngOnInit() {
-    this.output.emit(true);
+  getHero(): void {
+    console.log(this.route);
+    const id = +this.route.snapshot.paramMap.get('id');
+    console.log(id);
+    this.heroService.getHero(id)
+      .subscribe(hero => this.hero = hero);
+  }
+  goBack(): void {
+    this.location.back();
   }
 }
