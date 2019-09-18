@@ -9,6 +9,8 @@ import { HeroesAddComponent } from './heroes-add/heroes-add.component';
 import {MatCardModule} from '@angular/material';
 import { MessageComponent } from './message/message.component';
 import {CommonModule} from '@angular/common';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -17,13 +19,15 @@ import {CommonModule} from '@angular/common';
     HeroesDetailComponent,
     HeroesAddComponent,
     MessageComponent,
+    DashboardComponent,
   ],
   // to co chcemy uzywac
   imports: [
     BrowserModule,
     FormsModule,
     CommonModule,
-    MatCardModule
+    MatCardModule,
+    AppRoutingModule
   ],
   // to co chcemy reuzywac
   providers: [],
