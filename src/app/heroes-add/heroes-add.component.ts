@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Hero} from '../hero';
+import {MessageService} from '../message-service/message.service';
 
 @Component({
   selector: 'app-heroes-add',
@@ -11,13 +12,19 @@ export class HeroesAddComponent implements OnInit {
   initHero: Hero = new Hero();
   @Output() newHero: EventEmitter<Hero>;
 
-  constructor() {
+  constructor(private messageServer: MessageService) {
     this.newHero = new EventEmitter();
   }
 
   ngOnInit() {
     this.initHero.name = 'enter new name';
     this.initHero.id = 222;
+    this.messageServer.messages$.subscribe((message) => console.log(message));
+
+  }
+
+  saveNewHero() {
+    this.newHero.emit(this.initHero);
   }
 
   emitHero() {
